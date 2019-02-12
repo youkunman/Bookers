@@ -1,0 +1,18 @@
+<h1>Editing Book</h1>
+<%= form_for(@blog) do |f| %>
+
+<div class="field">
+    <label for="blog_title">Title</label>
+    <%= f.text_field :title, class: "book_title" %>
+</div>
+<div class="field">
+    <label for="blog_body">Body</label>
+    <%= f.text_area :body, class: "book_body" %>
+</div>
+<div class="action">
+    <%= f.submit 'Update Bock' %>
+</div>
+<% end %>
+<<%= link_to "Show", blog_path(@blog.id),class: "font show_#{@blog.id}" %>
+|
+<%= link_to "Back", blogs_new_path(@blog.id),class: "back" %>
